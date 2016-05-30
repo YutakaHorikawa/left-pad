@@ -8,6 +8,10 @@ import (
 func Leftpad(str string, len int, ch string) string {
 	strlen := utf8.RuneCountInString(str)
 
+	if len == strlen {
+		return str
+	}
+
 	if len < strlen {
 		return string([]rune(str)[0:len])
 	}
